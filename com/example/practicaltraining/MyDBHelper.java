@@ -56,7 +56,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) {//在数据库中创建表
         db.execSQL(CREAT_TABLE_ADM);
         db.execSQL(CREAT_TABLE_ASSIGN);
         db.execSQL(CREAT_TABLE_ATTEN);
