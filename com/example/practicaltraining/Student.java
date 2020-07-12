@@ -1,4 +1,7 @@
 package com.example.practicaltraining;
+
+import android.database.Cursor;
+
 public class Student {
     private String number;
     private String name;
@@ -53,4 +56,5 @@ public class Student {
     public void setContact(String contact) {
         this.contact = contact;
     }
+
 }
