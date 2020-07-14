@@ -24,10 +24,10 @@ public class ManCurActivity extends AppCompatActivity {
         cur_num=findViewById(R.id.cur_num);
         cur_name=findViewById(R.id.cur_name);
         addcur=findViewById(R.id.btn_addcur);
-        myDBHelper=new MyDBHelper(this,"PTDB",null,1);
+        myDBHelper=new MyDBHelper(this);
         dbManager=new DBManager(this,myDBHelper);
         nowcur=findViewById(R.id.dbcontain);
-        nowcur.setText(dbManager.selectAll("curriculum"));
+        nowcur.setText(dbManager.showAll("curriculum"));
         addcur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

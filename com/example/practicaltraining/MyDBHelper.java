@@ -5,14 +5,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class MyDBHelper extends SQLiteOpenHelper {
 
-//    private static final String db_name="PracticalTrainingDB";
+    private static final String db_name="MyDB.db";
     private static final String CREATE_TABLE_ADM="create table administrator(adm_count String primary key,adm_pwd String)"; //管理员表
     private static final String CREATE_TABLE_STU=
             "create table student(stu_num String primary key,"+
                     "stu_name String,"+
-                    "stu_pwd String"+
-                    "stu_sex"+
-                    "stu_contact"+
+                    "stu_pwd String,"+
+                    "stu_sex String,"+
+                    "stu_contact String"+
                     ")";  //学生表
     private static final String CREATE_TABLE_TEA=
             "create table teacher(tea_num String primary key,"+
@@ -42,6 +42,7 @@ public class MyDBHelper extends SQLiteOpenHelper {
 //                    ")";  //授课表
     private static final String CREATE_TABLE_ASSIGN=
         "create table assign(ass_num integer primary key autoincrement,"+
+                "ass_cla_num String,"+
                 "ass_tea_num String,"+
                 "ass_position String,"+
                 "ass_time String"+
@@ -56,8 +57,8 @@ public class MyDBHelper extends SQLiteOpenHelper {
                     "cho_ass_num String"+
                     ")";  //选课表
 
-    public MyDBHelper(Context content, String name,SQLiteDatabase.CursorFactory factory,int version){
-        super(content,name,null,1);
+    public MyDBHelper(Context content){
+        super(content,db_name,null,1);
 
     }
 
